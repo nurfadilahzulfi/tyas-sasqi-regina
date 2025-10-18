@@ -262,7 +262,23 @@ onMounted(() => {
 
 <style scoped>
 /* ---------- Base & layout ---------- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  -webkit-overflow-scrolling: touch;
+}
+
 :root { 
   --glass: rgba(255,255,255,0.12); 
   --accent1: #f093fb; 
@@ -274,18 +290,26 @@ onMounted(() => {
 
 .birthday-container {
   min-height: 100vh;
+  min-height: -webkit-fill-available;
+  width: 100vw;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(240,147,251,0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(79,172,254,0.3) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(102,126,234,0.2) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(240,147,251,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 80% 20%, rgba(79,172,254,0.35) 0%, transparent 55%),
+    radial-gradient(circle at 40% 40%, rgba(102,126,234,0.25) 0%, transparent 60%),
     linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #533483 75%, #2d1b69 100%);
   background-size: 100% 100%, 100% 100%, 100% 100%, 400% 400%;
+  background-attachment: fixed;
   animation: gradientShift 20s ease infinite;
   overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
   cursor: pointer;
-  padding: clamp(1rem, 3vw, 2.5rem) clamp(0.75rem, 2vw, 1.5rem);
-  font-family: 'Segoe UI Emoji', 'Noto Color Emoji', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  padding: env(safe-area-inset-top, 1rem) env(safe-area-inset-right, 1rem) env(safe-area-inset-bottom, 1rem) env(safe-area-inset-left, 1rem);
+  padding-top: max(env(safe-area-inset-top), 1.5rem);
+  padding-bottom: max(env(safe-area-inset-bottom), 1.5rem);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe UI Emoji', 'Noto Color Emoji', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @keyframes gradientShift { 
