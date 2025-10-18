@@ -1,0 +1,21 @@
+.quote-container {
+  max-width: 600px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.quote-mark {
+  font-size: 3rem;
+  color: #ffd700;
+}
+
+.quote-mark.closing {
+  float: right;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin: 10px;
+  line-height: 1.6;
+}

@@ -1,0 +1,19 @@
+.wish-button {
+  background: linear-gradient(90deg, #ff69b4, #ffb6c1);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.wish-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffb6c1;
+}
+
+.wish-button.wished {
+  background: linear-gradient(90deg, #a020f0, #ff69b4);
+}

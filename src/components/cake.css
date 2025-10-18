@@ -1,0 +1,65 @@
+.cake-container {
+  position: relative;
+  margin: 20px auto;
+  width: 220px;
+  height: 200px;
+  cursor: pointer;
+}
+
+.cake {
+  position: relative;
+  background: #8b4513;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cake-layer {
+  width: 220px;
+  height: 40px;
+  margin: 5px 0;
+  border-radius: 10px;
+  position: relative;
+  background: #b5651d;
+}
+
+.cake-layer .frosting {
+  height: 10px;
+  background: #fffacd;
+  border-radius: 5px;
+}
+
+.candles {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: -30px;
+  width: 100%;
+}
+
+.candle {
+  width: 10px;
+  height: 40px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.candle .flame {
+  width: 10px;
+  height: 15px;
+  background: radial-gradient(circle, #ffeb3b, #ff9800);
+  border-radius: 50%;
+  position: absolute;
+  top: -15px;
+  left: 0;
+  animation: flicker 0.3s infinite;
+}
+
+.candle.blown .flame {
+  display: none;
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.8); opacity: 0.6; }
+}
