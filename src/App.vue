@@ -128,7 +128,7 @@
     </div>
 
     <audio ref="audioPlayer" loop preload="auto">
-      <source src="/music/bergema.mp3" type="audio/mp3" />
+      <source src="/music/jadi_debu.mp3" type="audio/mp3" />
     </audio>
   </div>
 </template>
